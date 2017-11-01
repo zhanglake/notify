@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jquery.bootstrap-growl Demo</title>
+        <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <script src="jquery-1.11.1.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <script src="notify.js"></script>
+
+        <script type="text/javascript">
+
+            $(function() {
+                $.bootstrapGrowl("This is a test.");
+                
+                setTimeout(function() {
+                    $.bootstrapGrowl("This is another test.", { type: 'success' });
+                    $.bootstrapGrowl("This is another test.", { type: 'warning' });
+                    $.bootstrapGrowl("This is another test.", { type: 'danger' });
+                }, 1000);
+                
+                setTimeout(function() {
+                    $.bootstrapGrowl("Danger, Danger!", {
+                        type: 'danger',
+                        align: 'center',
+                        allow_dismiss: false
+                    });
+                }, 2000);
+                
+                setTimeout(function() {
+                    $.bootstrapGrowl("Danger, Danger!", {
+                        type: 'danger',
+                        align: 'left',
+                        stackup_spacing: 30
+                    });
+                }, 3000);
+            });
+
+        </script>
+
+    </body>
+</html>
